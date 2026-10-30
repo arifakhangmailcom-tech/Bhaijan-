@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Bhaijan 🎂</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#352400 0%,transparent 40%),
+    radial-gradient(circle at bottom,#170024 0%,transparent 40%);
+    z-index:-2;
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background-image:
+    radial-gradient(2px 2px at 20% 30%,#fff,transparent),
+    radial-gradient(2px 2px at 70% 20%,#ffd700,transparent),
+    radial-gradient(2px 2px at 50% 70%,#fff,transparent),
+    radial-gradient(2px 2px at 90% 80%,#ffd700,transparent);
+    background-size:200px 200px;
+    animation:twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.3;}
+    to{opacity:1;}
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:25px 18px;
+    text-align:center;
+}
+
+.badge{
+    display:inline-block;
+    border:1px solid #d4af37;
+    color:#ffd700;
+    padding:8px 20px;
+    border-radius:30px;
+    font-size:12px;
+    letter-spacing:3px;
+    margin-top:30px;
+}
+
+h1{
+    font-size:clamp(40px,9vw,85px);
+    margin:25px 0 10px;
+    background:linear-gradient(
+        90deg,
+        #fff2a8,
+        #d4af37,
+        #fff,
+        #d4af37
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 4s infinite linear;
+}
+
+@keyframes shine{
+    0%{filter:brightness(.8);}
+    50%{filter:brightness(1.5);}
+    100%{filter:brightness(.8);}
+}
+
+.script{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(30px,7vw,55px);
+    color:#ffd700;
+}
+
+.subtitle{
+    color:#ccc;
+    margin:20px auto;
+    line-height:1.8;
+    max-width:600px;
+}
+
+.cake{
+    font-size:90px;
+    margin:25px 0;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+.countdown-title{
+    color:#ffd700;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:25px 0 40px;
+}
+
+.time-box{
+    background:linear-gradient(145deg,#171717,#080808);
+    border:1px solid #b89628;
+    border-radius:15px;
+    padding:20px 15px;
+    min-width:75px;
+    box-shadow:0 0 20px #d4af3720;
+}
+
+.time-box span{
+    display:block;
+    font-size:30px;
+    font-weight:700;
+    color:#ffd700;
+}
+
+.time-box small{
+    font-size:11px;
+    color:#aaa;
+    letter-spacing:2px;
+}
+
+.card{
+    background:linear-gradient(145deg,#151515,#080808);
+    border:1px solid #8c7020;
+    border-radius:20px;
+    padding:30px 22px;
+    margin:25px 0;
+    box-shadow:0 0 25px #d4af3710;
+}
+
+.card h2{
+    color:#ffd700;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.card p{
+    color:#ddd;
+    line-height:2;
+    font-size:15px;
+}
+
+.emoji{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.dua{
+    color:#ffe68a;
+    font-size:23px;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.dua-meaning{
+    color:#ccc;
+    line-height:1.8;
+    font-size:14px;
+}
+
+button{
+    border:none;
+    outline:none;
+    padding:15px 30px;
+    border-radius:40px;
+    font-family:'Poppins',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#000;
+    background:linear-gradient(135deg,#fff0a3,#d4af37);
+    cursor:pointer;
+    margin:20px 0;
+    box-shadow:0 0 25px #d4af3740;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.07);
+    box-shadow:0 0 35px #ffd70080;
+}
+
+#surprise{
+    display:none;
+    margin-top:20px;
+    animation:fadeIn 1s;
+}
+
+#surprise h2{
+    font-family:'Great Vibes',cursive;
+    font-size:45px;
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+#surprise p{
+    line-height:2;
+    color:#fff;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:20px;
+    animation:floatUp 7s linear infinite;
+    pointer-events:none;
+    z-index:10;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    20%{opacity:1;}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+footer{
+    margin:40px 0 20px;
+    color:#888;
+    font-size:12px;
+    line-height:2;
+}
+
+footer span{
+    color:#ffd700;
+}
+
+@media(max-width:500px){
+    .container{
+        padding:15px;
+    }
+
+    .card{
+        padding:25px 15px;
+    }
+
+    .time-box{
+        min-width:65px;
+        padding:15px 10px;
+    }
+
+    .time-box span{
+        font-size:25px;
+    }
+
+    .cake{
+        font-size:75px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+    <div class="badge">
+        ✨ A SPECIAL DAY ✨
+    </div>
+
+    <h1>Happy Birthday</h1>
+
+    <div class="script">
+        Bhaijan ❤️
+    </div>
+
+    <!-- UPDATED TEXT -->
+    <p class="subtitle">
+        Aaj ka din bohot khaas hai,
+        kyunki aaj mere Bhaijan ka birthday hai. ❤️
+        Allah aapki zindagi ko hamesha khushiyon,
+        sukoon aur barkat se bhar de. ✨
+    </p>
+
+    <div class="cake">🎂</div>
+
+    <!-- Countdown -->
+
+    <h2 class="countdown-title">
+        🎉 Birthday Countdown 🎉
+    </h2>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>DAYS</small>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>HOURS</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>MINUTES</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>SECONDS</small>
+        </div>
+
+    </div>
+
+    <!-- Birthday Wishes -->
+
+    <div class="card">
+
+        <div class="emoji">🎁</div>
+
+        <h2>Birthday Wishes For Bhaijan</h2>
+
+        <p>
+            Happy Birthday Bhaijan! 🥳❤️
+            <br>
+
+            Aapka har din khushiyon se bhara ho,
+            aapki har dua qubool ho,
+            aur aapki zindagi mein hamesha
+            sukoon, mohabbat aur kamyabi rahe.
+            <br><br>
+
+            Allah aapko har buri nazar se bachaye,
+            aapke chehre par hamesha muskurahat rakhe
+            aur aapko duniya aur aakhirat ki
+            har bhalai naseeb farmaye.
+            <br><br>
+
+            Aaj ka din enjoy kijiye,
+            khoob muskuraiye aur hamesha khush rahiye!
+            <br><br>
+
+            <span style="color:#ffd700;">
+                Once again, Happy Birthday Bhaijan! 🎂✨
+            </span>
+        </p>
+
+    </div>
+
+    <!-- Islamic Dua -->
+
+    <div class="card">
+
+        <div class="emoji">🤲</div>
+
+        <h2>A Beautiful Dua</h2>
+
+        <div class="dua">
+            اللَّهُمَّ بَارِكْ لَهُ فِي عُمْرِهِ
+        </div>
+
+        <p class="dua-meaning">
+            Ya Allah! Bhaijan ki zindagi mein barkat ata farma,
+            unhe sehat, sukoon, khushiyan aur kamyabi naseeb farma.
+            <br><br>
+
+            Unki har jaiz dua qubool farma
+            aur unhe hamesha apni hifazat mein rakh.
+            <br><br>
+
+            <span style="color:#ffd700;">
+                Aameen Ya Rabbul Aalameen 🤍
+            </span>
+        </p>
+
+    </div>
+
+    <!-- Surprise Button -->
+
+    <div class="card">
+
+        <div class="emoji">🎊</div>
+
+        <h2>Ek Chhota Sa Surprise!</h2>
+
+        <p>
+            Birthday par ek special surprise toh banta hai na? 😍
+        </p>
+
+        <button onclick="showSurprise()">
+            🎁 Click For Surprise
+        </button>
+
+        <div id="surprise">
+
+            <h2>✨ Happy Birthday Bhaijan ✨</h2>
+
+            <p>
+                Allah aapko hamesha khush rakhe! ❤️
+                <br>
+
+                Aapki zindagi ka har naya saal
+                pehle se zyada khoobsurat ho.
+                <br><br>
+
+                May Allah bless you with endless happiness,
+                peace, success and barakah.
+                <br><br>
+
+                <strong style="color:#ffd700;">
+                    Aameen! 🤲🎂
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+    <footer>
+        Made with <span>❤️</span> and lots of duas
+        <br>
+        For Bhaijan | 1 November 2026
+    </footer>
+
+</div>
+
+<script>
+
+/* Birthday Date */
+
+const birthday = new Date("November 1, 2026 00:00:00").getTime();
+
+/* Countdown */
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance = birthday - now;
+
+    if(distance <= 0){
+
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+
+        document.querySelector(".countdown-title").innerHTML =
+        "🎉 Happy Birthday Bhaijan! 🎉";
+
+        return;
+    }
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) / 1000
+    );
+
+    document.getElementById("days").innerHTML =
+    String(days).padStart(2,"0");
+
+    document.getElementById("hours").innerHTML =
+    String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").innerHTML =
+    String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").innerHTML =
+    String(seconds).padStart(2,"0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* Surprise */
+
+function showSurprise(){
+
+    const surprise = document.getElementById("surprise");
+
+    surprise.style.display = "block";
+
+    createConfetti();
+
+    surprise.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* Confetti Animation */
+
+function createConfetti(){
+
+    const emojis = ["🎉","🎊","✨","💛","🎂","🌟","❤️"];
+
+    for(let i=0;i<80;i++){
+
+        const confetti = document.createElement("div");
+
+        confetti.innerHTML =
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+        confetti.style.position = "fixed";
+
+        confetti.style.left =
+        Math.random()*100 + "vw";
+
+        confetti.style.top = "-30px";
+
+        confetti.style.fontSize =
+        (Math.random()*20+15) + "px";
+
+        confetti.style.zIndex = "9999";
+
+        confetti.style.pointerEvents = "none";
+
+        document.body.appendChild(confetti);
+
+        const duration = Math.random()*3+3;
+
+        confetti.animate(
+            [
+                {
+                    transform:"translateY(0) rotate(0deg)",
+                    opacity:1
+                },
+                {
+                    transform:
+                    `translateY(110vh) rotate(${Math.random()*720}deg)`,
+                    opacity:0
+                }
+            ],
+            {
+                duration:duration*1000,
+                easing:"linear"
+            }
+        );
+
+        setTimeout(()=>{
+            confetti.remove();
+        },duration*1000);
+
+    }
+
+}
+
+
+/* Floating Hearts */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["💛","❤️","✨","💖","🌟"];
+
+    heart.innerHTML =
+    hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left = Math.random()*100+"vw";
+
+    heart.style.animationDuration =
+    (Math.random()*5+5)+"s";
+
+    heart.style.fontSize =
+    (Math.random()*15+15)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+
+}
+
+setInterval(createHeart,800);
+
+</script>
+
+</body>
+</html>
